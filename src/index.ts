@@ -23,21 +23,22 @@ import { log } from './helper';
         }
 
         Object.keys(nutritions).forEach((key) => {
-          if (typeof nutritions[key] !== 'number') {
+          if (typeof nutritions[key] !== 'number' && !Number.isNaN(nutritions[key] as number)) {
             return;
           }
 
+          const nutritionValue = nutritions[key] as number;
+          const percValue = parseFloat(Number((nutritionValue / 100) * food.amount).toFixed(2));
+
           if (!mealNutrition[key]) {
-            mealNutrition[key] = nutritions[key] || 0;
+            mealNutrition[key] = percValue || 0;
           } else {
-            mealNutrition[key] += nutritions[key];
+            mealNutrition[key] += percValue;
           }
         });
       });
 
-      Object.keys(mealNutrition).forEach((key) => {
-        console.log(`${key}: ${mealNutrition[key]}`);
-      });
+      console.table(mealNutrition);
     });
   });
 })();

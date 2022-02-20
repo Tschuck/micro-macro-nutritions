@@ -26,7 +26,7 @@ class Database {
 
         foodRow.eachCell((cell, colIndex) => {
           const colText = columnNames.getCell(colIndex).text;
-          if (colIndex > 7) {
+          if (colIndex > 8) {
             food[colText] = parseInt(cell.text, 10);
           } else {
             food[colText] = cell.text;
