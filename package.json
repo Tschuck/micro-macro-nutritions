@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "exceljs": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "15.12.4",
+    "@typescript-eslint/eslint-plugin": "4.24.0",
+    "eslint": "7.0.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-config-airbnb-typescript": "7.2.1",
+    "eslint-plugin-import": "2.23.2",
+    "tsconfig-paths": "3.9.0",
+    "typescript": "3.9.6"
+  },
+  "scripts": {
+    "lint": "eslint src --resolve-plugins-relative-to .",
+    "start": "ts-node -r tsconfig-paths/register ./src/index.ts"
+  }
+}
